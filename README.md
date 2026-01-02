@@ -88,6 +88,3 @@ This command combines all three source files and generates one executable file n
 After successful compilation, run the project using:
 course or ./course
 The generated executable runs the complete system, allowing the frontend, logic, and backend to work together as one program.
-
-
-## 📂 Project Structure
