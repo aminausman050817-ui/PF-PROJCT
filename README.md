@@ -73,6 +73,22 @@ How it works:
 User interacts with menu
 Calls logic functions based on user choice
 
+Data File (data.txt)
+
+The `data.txt` file is used to store course learning material permanently using file handling.
+Initially, this file is empty. Data is automatically written into this file when the user selects Add Course.
+The file works as a simple database for the project
+
+Each course is stored in the following format:
+CourseID|CourseTitle|CourseDescription
+Example:
+1|C++ Basics|Introduction to C++
+2|OOP|Classes and Objects
+
+The user does not need to manually edit this file.  
+All reading and writing operations are handled by the backend of the system.
+
+
 How All 3 Files Run as One Program:
 
 This project is divided into three C++ files:
