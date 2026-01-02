@@ -2,6 +2,11 @@
 #include <string>
 using namespace std;
 
+void addCourse(string, string, string);
+void viewCourses();
+void updateCourse(string);
+void deleteCourse(string);
+
 int main() {
     int choice;
     string id, title, desc;
@@ -48,4 +53,5 @@ int main() {
     }
     return 0;
 }
+
 
