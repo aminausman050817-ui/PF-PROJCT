@@ -1,0 +1,81 @@
+ #include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+// Add course
+void addCourse() {
+    string id, title, desc;
+    cout << "Enter ID: "; getline(cin, id);
+    cout << "Enter Title: "; getline(cin, title);
+    cout << "Enter Description: "; getline(cin, desc);
+
+    ofstream file("courses.txt", ios::app);
+    file << id << "|" << title << "|" << desc << endl;
+    file.close();
+}
+
+// View courses
+void viewCourses() {
+    string line;
+    ifstream file("courses.txt");
+    while (getline(file, line)) cout << line << endl;
+    file.close();
+}
+
+// Update course
+void updateCourse() {
+    string id, line, title, desc;
+    cout << "Enter Course ID to update: "; getline(cin, id);
+
+    ifstream file("courses.txt");
+    ofstream temp("temp.txt");
+    bool found = false;
+
+    while (getline(file, line)) {
+        if (line.substr(0, line.find("|")) == id) {
+            cout << "New Title: "; getline(cin, title);
+            cout << "New Description: "; getline(cin, desc);
+            temp << id << "|" << title << "|" << desc << endl;
+            found = true;
+        } else temp << line << endl;
+    }
+
+    file.close(); temp.close();
+    remove("courses.txt"); rename("temp.txt", "courses.txt");
+    if (!found) cout << "Course ID not found!\n";
+}
+//delete course
+void deleteCourse() {
+    string id, line;
+    cout << "Enter Course ID to delete: "; getline(cin, id);
+
+    ifstream file("courses.txt");
+    ofstream temp("temp.txt");
+    bool found = false;
+
+    while (getline(file, line)) {
+        if (line.substr(0, line.find("|")) != id) temp << line << endl;
+        else found = true;
+    }
+
+    file.close(); temp.close();
+    remove("courses.txt"); rename("temp.txt", "courses.txt");
+    if (!found) cout << "Course ID not found!\n";
+}
+
+int main() {
+    int choice;
+    do {
+        cout << "\n1.Add 2.View 3.Update 4.Delete 5.Exit\nChoice: ";
+        cin >> choice; cin.ignore();
+
+        if (choice == 1) addCourse();
+        else if (choice == 2) viewCourses();
+        else if (choice == 3) updateCourse();
+        else if (choice == 4) deleteCourse();
+    } while (choice != 5);
+
+    cout << "Exiting...\n";
+    return 0;
+}
