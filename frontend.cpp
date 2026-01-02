@@ -2,6 +2,12 @@
 #include <string>
 using namespace std;
 
+cost int ADD= 1;
+cost int VIEW= 2;
+cost int UPDATE= 3;
+cost int DELETE= 4;
+cost int EXIST= 5;
+
 void addCourse(string, string, string);
 void viewCourses();
 void updateCourse(string);
@@ -53,5 +59,6 @@ int main() {
     }
     return 0;
 }
+
 
 
