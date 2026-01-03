@@ -27,11 +27,9 @@ void viewCourses() {
 void updateCourse() {
     string id, line, title, desc;
     cout << "Enter Course ID to update: "; getline(cin, id);
-
     ifstream file("courses.txt");
     ofstream temp("temp.txt");
     bool found = false;
-
     while (getline(file, line)) {
         if (line.substr(0, line.find("|")) == id) {
             cout << "New Title: "; getline(cin, title);
@@ -49,7 +47,6 @@ void updateCourse() {
 void deleteCourse() {
     string id, line;
     cout << "Enter Course ID to delete: "; getline(cin, id);
-
     ifstream file("courses.txt");
     ofstream temp("temp.txt");
     bool found = false;
@@ -76,6 +73,6 @@ int main() {
         else if (choice == 4) deleteCourse();
     } while (choice != 5);
 
-    cout << "Exiting...\n";
+    cout << "Exiting.....\n";
     return 0;
 }
