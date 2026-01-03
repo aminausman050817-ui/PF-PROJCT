@@ -38,7 +38,6 @@ void updateCourse() {
             found = true;
         } else temp << line << endl;
     }
-
     file.close(); temp.close();
     remove("courses.txt"); rename("temp.txt", "courses.txt");
     if (!found) cout << "Course ID not found!\n";
@@ -55,12 +54,10 @@ void deleteCourse() {
         if (line.substr(0, line.find("|")) != id) temp << line << endl;
         else found = true;
     }
-
     file.close(); temp.close();
     remove("courses.txt"); rename("temp.txt", "courses.txt");
     if (!found) cout << "Course ID not found!\n";
 }
-
 int main() {
     int choice;
     do {
@@ -72,7 +69,6 @@ int main() {
         else if (choice == 3) updateCourse();
         else if (choice == 4) deleteCourse();
     } while (choice != 5);
-
     cout << "Exiting.....\n";
     return 0;
 }
