@@ -14,7 +14,6 @@ void addCourse() {
     file << id << "|" << title << "|" << desc << endl;
     file.close();
 }
-
 // View courses
 void viewCourses() {
     string line;
@@ -22,7 +21,6 @@ void viewCourses() {
     while (getline(file, line)) cout << line << endl;
     file.close();
 }
-
 // Update course
 void updateCourse() {
     string id, line, title, desc;
