@@ -2,7 +2,6 @@
 #include <fstream>
 using namespace std;
 
-
 void menu();
 void addRecord();
 void showRecords();
