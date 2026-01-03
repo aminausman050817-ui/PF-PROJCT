@@ -2,7 +2,7 @@
 #include <fstream>
 using namespace std;
 
-// Function prototypes
+// Function 
 void menu();
 void addRecord();
 void showRecords();
