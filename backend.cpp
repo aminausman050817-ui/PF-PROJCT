@@ -132,7 +132,7 @@ void updateRecord()
     cout << "Record Updated Successfully\n";
 }
 
-// DELETE RECORD.
+// DELETE RECORD
 void deleteRecord()
 {
     int id, age, searchId;
